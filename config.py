@@ -1,13 +1,11 @@
 import os
-
 class Config:
-
    '''
    General configuration parent class
    '''
    pass
    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-   SQLALCHEMY_DATABASE_UR='postgresql+psycopg2://moringa:qwerty12@localhost/movies'
+   SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:qwerty12@localhost/movies'
    MOVIE_API_BASE_URL ='https://api.themoviedb.org/3/movie/{}?api_key={}'
    MOVIE_API_KEY = os.environ.get('MOVIE_API_KEY')
     #  email configurations
@@ -29,8 +27,6 @@ class Config:
    @staticmethod
    def init_app(app):
         pass
-
-
 class ProdConfig(Config):
    '''
    Production  configuration child class
@@ -40,14 +36,14 @@ class ProdConfig(Config):
    pass
    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URL='postgresql+psycopg2://moringa:qwerty12@localhost/movies'
+   SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:qwerty12@localhost/movies'
 class DevConfig(Config):
    '''
    Development  configuration child class
    Args:
        Config: The parent configuration class with General configuration settings
    '''
-   SQLALCHEMY_DATDATABASE_URL='postgresql+psycopg2://moringa:qwerty12@localhost/movies'
+   SQLALCHEMY_DATDATABASE_URI='postgresql+psycopg2://moringa:qwerty12@localhost/movies'
    DEBUG = True
 
 config_options = {
