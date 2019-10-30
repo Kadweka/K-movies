@@ -1,21 +1,22 @@
 import os
+
 class Config:
    '''
    General configuration parent class
    '''
    pass
+   # simple mde  configurations
    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-   SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:qwerty12@localhost/movies'
+   SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://moringa:qwerty12@localhost/movies'
    MOVIE_API_BASE_URL ='https://api.themoviedb.org/3/movie/{}?api_key={}'
    MOVIE_API_KEY = os.environ.get('MOVIE_API_KEY')
-    #  email configurations
    MAIL_SERVER = 'smtp.googlemail.com'
    MAIL_PORT = 587
    MAIL_USE_TLS = True
    MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
    MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
    UPLOADED_PHOTOS_DEST = "app/static/photos"
-   SUBJECT_PREFIX = 'K-movies'
+   SUBJECT_PREFIX = 'FARMERS-HOME'
    MAIL_USERNAME="developersjuniors@gmail.com"
    MAIL_PASSWORD="Nairobi001"
    SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -27,6 +28,7 @@ class Config:
    @staticmethod
    def init_app(app):
         pass
+
 class ProdConfig(Config):
    '''
    Production  configuration child class
@@ -35,15 +37,17 @@ class ProdConfig(Config):
    '''
    pass
    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+   SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://moringa:qwerty12@localhost/movies'
+
 class TestConfig(Config):
-   SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:qwerty12@localhost/movies'
+    SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://moringa:qwerty12@localhost/movies'
 class DevConfig(Config):
    '''
    Development  configuration child class
    Args:
        Config: The parent configuration class with General configuration settings
    '''
-   SQLALCHEMY_DATDATABASE_URI='postgresql+psycopg2://moringa:qwerty12@localhost/movies'
+   SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://moringa:qwerty12@localhost/movies'
    DEBUG = True
 
 config_options = {
