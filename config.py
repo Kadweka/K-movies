@@ -7,7 +7,7 @@ class Config:
    '''
    pass
    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-   SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:qwerty12@localhost/movies'
+   SQLALCHEMY_DATABASE_UR='postgresql+psycopg2://moringa:qwerty12@localhost/movies'
    MOVIE_API_BASE_URL ='https://api.themoviedb.org/3/movie/{}?api_key={}'
    MOVIE_API_KEY = os.environ.get('MOVIE_API_KEY')
     #  email configurations
