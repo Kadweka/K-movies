@@ -7,7 +7,7 @@ class Config:
    pass
    # simple mde  configurations
    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-   SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://moringa:qwerty12@localhost/movies'
+   SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://moringa:qwerty12@localhost/ktown003'
    MOVIE_API_BASE_URL ='https://api.themoviedb.org/3/movie/{}?api_key={}'
    MOVIE_API_KEY = os.environ.get('MOVIE_API_KEY')
    MAIL_SERVER = 'smtp.googlemail.com'
@@ -35,18 +35,17 @@ class ProdConfig(Config):
    Args:
        Config: The parent configuration class with General configuration settings
    '''
-
    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://moringa:qwerty12@localhost/movies'
+    SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://moringa:qwerty12@localhost/movies-test'
 class DevConfig(Config):
    '''
    Development  configuration child class
    Args:
        Config: The parent configuration class with General configuration settings
    '''
-   SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://moringa:qwerty12@localhost/movies'
+   SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://moringa:qwerty12@localhost/ktown003'
    DEBUG = True
 
 config_options = {
