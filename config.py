@@ -4,7 +4,7 @@ class Config:
    '''
    General configuration parent class
    '''
-   pass
+
    # simple mde  configurations
    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
    SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://moringa:qwerty12@localhost/ktown003'
@@ -25,9 +25,7 @@ class Config:
 # simple mde  configurations
    SIMPLEMDE_JS_IIFE = True
    SIMPLEMDE_USE_CDN = True
-   @staticmethod
-   def init_app(app):
-        pass
+  
 
 class ProdConfig(Config):
    '''
