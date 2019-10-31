@@ -16,7 +16,7 @@ class Config:
    MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
    MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
    UPLOADED_PHOTOS_DEST = "app/static/photos"
-   SUBJECT_PREFIX = 'FARMERS-HOME'
+   SUBJECT_PREFIX = 'K-movies'
    MAIL_USERNAME="developersjuniors@gmail.com"
    MAIL_PASSWORD="Nairobi001"
    SECRET_KEY = os.environ.get('SECRET_KEY')
